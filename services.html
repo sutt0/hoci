@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Creative Services || HOCI</title>
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+<style>
+  ul#stepForm, ul#stepForm li {
+    margin: 0;
+    padding: 0;
+  }
+  ul#stepForm li {
+    list-style: none outside none;
+  } 
+  label{margin-top: 10px;}
+  .help-inline-error{color:red;}
+</style>
+
+<script>
+function testFunc(value){
+	document.getElementById('ajax').innerHTML=value;
+}
+</script>
+</head>
+
+<body>
+    
+    	<div id="page-wrapper">
+
+            <div class="container-fluid">
+            	
+                <!--header-->
+            	<div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            HOCI <small>Creative Services</small>
+                        </h1>
+                    </div>
+                </div>
+                
+                
+                
+                <!--jQuery Form-->
+                <div class="row">	
+ <div class="col-lg-12">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Help us to serve you in quick 3  quick steps!</h3>
+    </div>
+    <div class="panel-body">
+      <form novalidate="novalidate" name="basicform" id="basicform" method="post" action="">
+        
+        <div style="display: block;" id="sf1" class="frm">
+          <fieldset>
+            <legend>Choose What You Want</legend>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label" for="selectservice">I Want to: </label>
+              <div class="col-lg-6">
+              					<select id="selectservice" class="form-control text-center">
+                                	<option>Select a Service:</option>
+                                    <option value="workshop">Book a Workshop</option>
+                                    <option value="event">Host an event</option>
+                                    <option value="photography">Shoot Photographs/Film</option>
+                                </select>
+                <!--input value="kj" placeholder="Your Name" id="uname" name="uname" class="form-control valid" autocomplete="off" type="text"-->
+              </div>
+            </div>
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-primary open1" type="button" onclick="loadDiv(selectservice.value)">Next <span class="fa fa-arrow-right"></span></button> 
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div id="sf2" class="frm" style="display: none;">
+          <fieldset>
+            <legend>Customise Your Service</legend>
+
+
+            <div class="form-group row">
+              <label class="col-lg-2 control-label" for="uemail">Search a Workshop: </label>
+              <div class="col-lg-6">
+                <input value="" placeholder="Search the workshop of your choice" id="uemail" name="uemail" class="form-control valid" autocomplete="off" type="text"><span style="display: none;" class="help-inline-error" generated="true" for="uemail">Please enter a valid email address.</span>
+              </div>              
+            </div>
+            
+            <!--dynamic div-->
+              <div class="row">
+                <div id="ajax">
+                </div>
+              </div>
+                <!--/dynamic div-->
+
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+
+
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-warning back2" type="button"><span class="fa fa-arrow-left"></span> Back</button> 
+                <button class="btn btn-primary open2" type="button">Next <span class="fa fa-arrow-right"></span></button> 
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div id="sf3" class="frm" style="display: none;">
+          <fieldset>
+            <legend>Confirm Your Booking</legend>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label" for="upass1">Password: </label>
+              <div class="col-lg-6">
+                <input placeholder="Your Password" id="upass1" name="upass1" class="form-control" autocomplete="off" type="password">
+              </div>
+            </div>
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label" for="upass1">Confirm Password: </label>
+              <div class="col-lg-6">
+                <input placeholder="Confirm Password" id="upass2" name="upass2" class="form-control" autocomplete="off" type="password">
+              </div>
+            </div>
+
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-warning back3" type="button"><span class="fa fa-arrow-left"></span> Back</button> 
+                <button class="btn btn-primary open3" type="button">Submit </button> 
+                <img src="../Creating responsive multi-step form with Bootstrap and Jquery - www.thesoftwareguy.in_files/ spinner.gif" alt="" id="loader" style="display: none">
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+	<!--/jQuery Form-->
+                
+</div>
+</div>
+</div>
+        <script src="js/jquery-1.11.0.js"></script>
+
+         <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+
+        
+<script>
+//ajax function
+function loadDiv(str)
+{
+	
+	if (window.XMLHttpRequest)
+  	// code for IE7+, Firefox, Chrome, Opera, Safari
+  		xmlhttp=new XMLHttpRequest();
+	else
+  	// code for IE6, IE5
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		
+	var url= str+".json";
+	xmlhttp.onreadystatechange=function()
+  	{
+  		//if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    		//document.getElementById("ajax").innerHTML=xmlhttp.responseText;
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var myArr = JSON.parse(xmlhttp.responseText);
+        myFunction(myArr);
+    	}
+		
+  	}
+	
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();
+}
+function myFunction(arr) {
+    var out = "";
+    var i;
+	
+    for(i = 0; i<arr.length; i++) {
+		out+= 
+					'<div class="col-lg-3 col-md-6">'+
+                        '<div class="panel panel-primary">'+
+                            '<div class="panel-heading">'+
+                                '<div class="row">'+
+                                    '<div class="col-xs-3">'+
+                                        '<i class="fa fa-comments fa-5x"></i>'+
+                                    '</div>'+
+                                    '<div class="col-xs-9 text-right">'+
+                                        '<div class="huge">'+arr[i].num+'</div>'+
+                                        '<div>'+arr[i].name+'</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                            '<a href="#">'+
+                                '<div class="panel-footer">'+
+                                    '<span class="pull-left">View Details</span>'+
+                                    '<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>'+
+                                    '<div class="clearfix"></div>'+
+                                '</div>'+
+                            '</a>'+
+                        '</div>'+
+					'</div>'
+				;
+				document.getElementById("ajax").innerHTML = out;
+    }
+    
+}
+</script>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+  
+  jQuery().ready(function() {
+
+    // validate form on keyup and submit
+    var v = jQuery("#basicform").validate({
+      rules: {
+        uname: {
+          required: true,
+          minlength: 2,
+          maxlength: 16
+        },
+        uemail: {
+          required: true,
+          minlength: 2,
+          //email: true,
+          maxlength: 100,
+        },
+        upass1: {
+          required: true,
+          minlength: 6,
+          maxlength: 15,
+        },
+        upass2: {
+          required: true,
+          minlength: 6,
+          equalTo: "#upass1",
+        }
+
+      },
+      errorElement: "span",
+      errorClass: "help-inline-error",
+    });
+
+    $(".open1").click(function() {
+      if (v.form()) {
+        $(".frm").hide("fast");
+        $("#sf2").show("slow");
+      }
+    });
+
+    $(".open2").click(function() {
+      if (v.form()) {
+        $(".frm").hide("fast");
+        $("#sf3").show("slow");
+      }
+    });
+    
+    $(".open3").click(function() {
+      if (v.form()) {
+        $("#loader").show();
+         setTimeout(function(){
+           $("#basicform").html('<h2>Thanks for your time.</h2>');
+         }, 1000);
+        return false;
+      }
+    });
+    
+    $(".back2").click(function() {
+      $(".frm").hide("fast");
+      $("#sf1").show("slow");
+    });
+
+    $(".back3").click(function() {
+      $(".frm").hide("fast");
+      $("#sf2").show("slow");
+    });
+
+  });
+</script>
+    
+</body>
+</html>
